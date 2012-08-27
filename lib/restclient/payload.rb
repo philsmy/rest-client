@@ -147,7 +147,7 @@ module RestClient
 
       # for UrlEncoded escape the keys
       def handle_key key
-        URI.escape(key.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+        URI.escape(key.to_s.to_str, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
       end
 
       def headers
